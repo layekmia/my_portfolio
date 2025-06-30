@@ -3,7 +3,7 @@ import ScrollIndicator from "./ScrollIndicator";
 
 export default function About() {
   return (
-    <div className="max-w-6xl mx-auto px-5 py-[80px]">
+    <div className="max-w-[1220px] mx-auto sm:px-20 lg:px-5 px-5 py-[80px]">
       <div className="mb-[80px]">
         <ScrollIndicator />
       </div>

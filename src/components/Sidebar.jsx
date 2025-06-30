@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
-import { FaHome, FaUser, FaCode, FaBlog, FaEnvelope } from "react-icons/fa";
+import {
+  FaHome,
+  FaUser,
+  FaCode,
+  FaEnvelope,
+  FaLaptopCode,
+} from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import { NavLink, useLocation } from "react-router-dom";
+import { MdOutlineReviews } from "react-icons/md";
 
 const navItems = [
   { icon: <FaHome />, to: "home", type: "scroll", label: "Home" },
   { icon: <FaUser />, to: "about", type: "scroll", label: "About" },
-  { icon: <FaCode />, to: "work", type: "scroll", label: "Work" },
+  { icon: <FaCode />, to: "skill", type: "scroll", label: "Skill" },
+  { icon: <FaLaptopCode />, to: "work", type: "scroll", label: "Work" },
+  {icon: <MdOutlineReviews />, to: 'testimonial', type: "scroll", label: "Testimonial"},
   { icon: <FaEnvelope />, to: "contact", type: "scroll", label: "Contact" },
 ];
 

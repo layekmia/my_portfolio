@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Right Side: Social + Credit */}
         <div className="flex items-center gap-4">
           {/* Icons */}
-          <a href="#" className="bg-teal-400 text-black p-2 rounded-full hover:bg-teal-300 transition">
+          <a href="https://web.facebook.com/layekmia.webdev/" className="bg-teal-400 text-black p-2 rounded-full hover:bg-teal-300 transition">
             <FaFacebookF size={14} />
           </a>
           <a href="#" className="bg-teal-400 text-black p-2 rounded-full hover:bg-teal-300 transition">
@@ -27,7 +27,7 @@ export default function Footer() {
           </a>
           {/* Credit */}
           <span className="ml-2 text-sm">
-            Built by <a href="#" className="text-teal-400 hover:underline">YourName</a>
+            Built by <a href="#" className="text-teal-400 hover:underline">Layek Miah</a>
           </span>
         </div>
       </div>

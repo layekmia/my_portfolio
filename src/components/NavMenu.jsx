@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { NavLink } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi"; // Hamburger & close icons
+import { HiX } from "react-icons/hi"; // Hamburger & close icons
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { LuDownload } from "react-icons/lu";
 import Logo from "./Logo";
+import handleViewAndDownload from "../util/helper";
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
+import SocialMedia from "./SocialMedia";
 
 const navItem = [
   { name: "Home", href: "#home", type: "scroll" },
   { name: "About", href: "#about", type: "scroll" },
   { name: "Work", href: "#work", type: "scroll" },
+  { name: "Testimonial", href: "#testimonial", type: "scroll" },
   { name: "Blog", href: "/blogs", type: "route" },
   { name: "Contact", href: "#contact", type: "scroll" },
 ];
@@ -50,38 +54,26 @@ export default function NavMenu() {
     <>
       {/* Desktop menu */}
       <nav className="hidden md:flex items-center gap-7 text-lg text-white">
-        {navItem.map((item) =>
-          item.type === "scroll" ? (
-            <ScrollLink
-              key={item.name}
-              to={item.href.replace("#", "")}
-              smooth={true}
-              duration={500}
-              offset={-70}
-              spy={true}
-              activeClass="text-textAccent"
-              className={`cursor-pointer transition-colors ${
-                activeSection === item.href.replace("#", "")
-                  ? "text-textAccent font-medium"
-                  : ""
-              }`}
-            >
-              {item.name}
-            </ScrollLink>
-          ) : (
-            <NavLink
-              key={item.name}
-              to={item.href}
-              className={({ isActive }) =>
-                `cursor-pointer transition-colors ${
-                  isActive ? "text-textAccent font-semibold" : ""
-                }`
-              }
-            >
-              {item.name}
-            </NavLink>
-          )
-        )}
+        <ul className="flex items-center  gap-7">
+          <li>
+            <NavLink className={({isActive}) => `${isActive && 'text-textAccent'}`} to='/'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink className={({isActive}) => `${isActive && 'text-textAccent'}`} to='/blogs'>Blogs</NavLink>
+          </li>
+        </ul>
+        <button
+          onClick={handleViewAndDownload}
+          className="py-2 px-5 rounded-full  text-black bg-textPrimary flex items-center gap-1 max-md:hidden"
+        >
+          Download CV
+          <span>
+            <LuDownload />
+          </span>
+        </button>
+        <div className="max-lg:hidden">
+          <SocialMedia/>
+        </div>
       </nav>
 
       {/* Mobile hamburger */}
@@ -147,11 +139,25 @@ export default function NavMenu() {
             )
           )}
         </ul>
+        <div className="flex items-center justify-center mb-5 gap-4">
+          <a className="flex items-center gap-2" target="_blank" href="https://github.com/layekmia">
+            <FaGithub className="text-xl text-textPrimary" />
+          </a>
+          <a className="flex items-center gap-2"
+            target="_blank"
+            href="https://www.linkedin.com/in/layekmiah-webdeveloper"
+          >
+            <FaLinkedin  className="text-xl text-textPrimary"/>
+          </a>
+          <a className="flex items-center gap-2" target="_blank" href="https://www.facebook.com/layekmia.webdev/">
+            <FaFacebook  className="text-xl text-textPrimary"/>
+          </a>
+        </div>
         <div className="px-4">
           <a
             href="/resume.pdf"
             download="Layek_Resume.pdf"
-            className="py-2 px-5 rounded-full text-back bg-textPrimary flex items-center gap-[2px]md:hidden w-full text-center text-black justify-center"
+            className="gap-2 py-2 px-5 rounded-full text-back bg-textPrimary flex items-center gap-[2px]md:hidden w-full text-center text-black justify-center"
             onClick={handleLinkClick}
           >
             Download CV

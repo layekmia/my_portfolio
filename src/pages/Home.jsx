@@ -6,6 +6,9 @@ import NavBar from "../components/NavBar";
 import SkillSection from "../components/Skills";
 import TestimonialSection from "../components/Testimonials";
 import WorkSection from "../components/WorkSection";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default function Home() {
   return (
@@ -18,10 +21,11 @@ export default function Home() {
         </section>
         <section id="skill"><SkillSection/></section>
         <section id="work" className="bg-surfaceDark"><WorkSection/></section>
-        <section id="Testimonial" className="bg-surface"><TestimonialSection/></section>
+        <section id="testimonial" className="bg-surface"><TestimonialSection/></section>
         <section id="contact" className="bg-surfaceDark"><ContactForm/></section>
       </main>
       <Footer />
+      <ToastContainer autoClose={1000} position='top-center'/>
     </>
   );
 }

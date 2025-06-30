@@ -1,20 +1,41 @@
-import project from "../assets/project.png";
-
-const ProjectCard = ({technologies, className, url, description}) => {
+export default function ProjectCard({
+  technologies,
+  url,
+  description,
+  img,
+  reverse = false,
+  name
+}) {
   return (
-    <div className={`max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 mt-10 ${className}`}>
-      <div className="rounded-tl-xl rounded-bl-xl overflow-hidden p-6 bg-[#374151]">
-        <img
-          src={project}
-          alt="Fiskil Project"
-          className="w-full h-full object-cover"
-        />
+    <div
+      className={`max-w-[1220px] mx-auto mt-10 flex flex-col lg:flex-row ${
+        reverse ? "lg:flex-row-reverse" : ""
+      } px-4 sm:px-20 lg:px-5`}
+    >
+      <div
+        className={`flex-1 ${
+          !reverse
+            ? "rounded-tl-xl lg:rounded-bl-xl rounded-tr-xl lg:rounded-tr-none"
+            : "rounded-tr-xl lg:rounded-br-xl rounded-tl-xl lg:rounded-tl-none"
+        } overflow-hidden p-10 bg-[#374151]`}
+      >
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <img
+            src={img}
+            alt="project"
+            className="object-cover hover:scale-105 transition-transform duration-300 rounded-xl"
+          />
+        </a>
       </div>
-      <div className="space-y-4 p-10 bg-surface rounded-tr-xl rounded-br-xl">
-        <h3 className="text-xl font-semibold text-white">Fiskil</h3>
-        <p className="text-gray-400 text-sm">
-         {description}
-        </p>
+      <div
+        className={`flex-1 space-y-4 p-10 bg-surface ${
+          reverse
+            ? "lg:rounded-tl-xl rounded-bl-xl rounded-br-xl lg:rounded-br-none"
+            : "lg:rounded-tr-xl rounded-br-xl rounded-bl-xl lg:rounded-bl-none"
+        } `}
+      >
+        <h3 className="text-xl font-semibold text-white">{name}</h3>
+        <p className="text-gray-400 text-sm">{description}</p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
             <span
@@ -26,7 +47,8 @@ const ProjectCard = ({technologies, className, url, description}) => {
           ))}
         </div>
         <a
-          href={url} target="_blank"
+          href={url}
+          target="_blank"
           className="inline-block mt-2 text-sm text-blue-400 hover:underline"
         >
           🔗 View Project
@@ -34,6 +56,4 @@ const ProjectCard = ({technologies, className, url, description}) => {
       </div>
     </div>
   );
-};
-
-export default ProjectCard;
+}

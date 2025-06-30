@@ -1,6 +1,9 @@
 import Sidebar from "./Sidebar";
 import profile from "../assets/profile.png";
 import { MdEmail } from "react-icons/md";
+import { Link } from "react-scroll";
+import { Typewriter } from 'react-simple-typewriter';
+import SocialSmallScreen from "./SocialSmallScreen";
 
 export default function Hero() {
   return (
@@ -8,7 +11,7 @@ export default function Hero() {
       <div className="hide-1024-1320 max-sm:hidden">
         <Sidebar />
       </div>
-      <div className="max-w-6xl mx-auto px-5  py-12">
+      <div className="max-w-[1220px] mx-auto px-5  py-12">
         {/* Heading */}
         <h2 className="text-[80px] font-sans text-textPrimary max-md:hidden text-center mb-2">
           Developer
@@ -50,33 +53,68 @@ export default function Hero() {
                 REACT
               </button>
             </div>
-            <button className="my-8 py-2 px-8 bg-white rounded-full">
+            <a
+              href="https://wa.me/8801794700226?text=Hi%20Layek!%20I%20saw%20your%20portfolio%20and%20I’m%20interested%20in%20hiring%20you%20for%20a%20web%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="my-8 py-2 px-8 bg-textAccent rounded-full"
+            >
               Hire Me
-            </button>
+            </a>
           </div>
           {/* details */}
           <div className="flex items-center gap-6 flex-col lg:flex-row  sm:px-10 md:px-14  lg:px-0">
             <div>
               <span className="text-textPrimary text-sm"> &lt;h1&gt;</span>
               <h1 className="text-[32px] sm:text-[55px] text-white font-sans leading-[36px] sm:leading-[70px] ml-3">
-                Hey, <br /> I'm <span className="text-textAccent">Layek</span>,{" "}
-                <br /> Front-End developer
+                Hey, <br /> I'm <span className="">Layek</span>,{" "}
+                <br />{" "}
+                <span className="text-textAccent">
+                  <Typewriter
+                    words={[
+                      "Front-End Developer",
+                      "React Lover",
+                      "Problem Solver",
+                    ]}
+                    loop={true}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </span>
               </h1>
               <span className="text-textPrimary text-sm mb-5 inline-block">
-                {" "}
                 &lt;h1/&gt;
               </span>
               <br />
               <span className="text-textPrimary text-sm"> &lt;p&gt;</span>
               <p className="text-white ml-3">
-                I help business grow by crafting amazing web experiences. If
-                you’re looking for a developer that likes to get stuff done,
+                A passionate Front-End Developer crafting clean, responsive, and
+                user-focused websites with modern technologies like{" "}
+                <span className="font-medium text-secondaryText">React</span>,{" "}
+                <span className="font-medium text-secondaryText">
+                  JavaScript
+                </span>
+                , and{" "}
+                <span className="font-medium text-secondaryText">
+                  Tailwind CSS
+                </span>
+                . I bring digital ideas to life through beautiful UI and smooth
+                UX.
               </p>
               <span className="text-textPrimary text-sm"> &lt;p/&gt;</span>{" "}
               <br />
-              <button className="flex items-center text-3xl text-textAccent gap-2 my-4">
+              <SocialSmallScreen/>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="flex items-center text-3xl text-textAccent gap-2 my-4 cursor-pointer"
+              >
                 let’s talk <MdEmail className="text-gray-500" />
-              </button>
+              </Link>
             </div>
             {/* Stats */}
             <div className="py-12 px-7 bg-surfaceDark flex items-center flex-col justify-center gap-10 rounded-full">
@@ -89,14 +127,14 @@ export default function Hero() {
               </p>
               <p className="text-base text-white flex items-center ">
                 <span className="text-4xl text-textAccent font-medium mr-3 ">
-                  6
+                  8
                 </span>{" "}
                 Development <br />
                 Tools
               </p>
               <p className="text-base text-white flex items-center ">
                 <span className="text-4xl text-textAccent font-medium mr-3 ">
-                  8
+                  2
                 </span>{" "}
                 Years of <br />
                 Experience

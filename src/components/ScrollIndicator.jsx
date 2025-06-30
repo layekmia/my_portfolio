@@ -1,4 +1,3 @@
-// components/ScrollIndicator.jsx
 import { motion } from "framer-motion";
 
 const ScrollIndicator = () => {
