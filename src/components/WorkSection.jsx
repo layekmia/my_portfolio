@@ -3,9 +3,9 @@ import ScrollIndicator from "./ScrollIndicator";
 
 export default function WorkSection() {
   return (
-    <div className="py-20 ">
+    <div className="py-20 px-4 md:px-0">
       <ScrollIndicator />
-      <h2 className="py-3 text-textAccent px-8 bg-gray-800 rounded-full w-fit mx-auto text-center mt-10 ">
+      <h2 className=" text-textAccent  rounded-full text-center mt-10 text-3xl">
         Featured Projects
       </h2>
       <p className="text-white text-lg text-center mt-3">

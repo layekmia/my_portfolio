@@ -29,9 +29,9 @@ export default function SkillsSection() {
   const filteredSkills = skills.filter((skill) => skill.category === filter);
 
   return (
-    <section className="bg-surface text-white ">
+    <section className="bg-surface text-white pt-10 ">
       <ScrollIndicator />
-      <div className="max-w-[1220px] mx-auto text-center mt-10 py-16 px-6 sm:px-20 lg:px-5">
+      <div className="max-w-[1220px] mx-auto text-center mt-5 py-16 px-6 sm:px-20 lg:px-5">
         <h2 className="text-textAccent text-4xl font-bold mb-4">What I do</h2>
         <p className="text-gray-300 mb-10">
           The skills, tools and technologies I am really good at:

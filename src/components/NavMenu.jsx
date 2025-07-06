@@ -12,9 +12,9 @@ import SocialMedia from "./SocialMedia";
 const navItem = [
   { name: "Home", href: "#home", type: "scroll" },
   { name: "About", href: "#about", type: "scroll" },
+  { name: "Skills", href: "#skill", type: "scroll" },
   { name: "Work", href: "#work", type: "scroll" },
   { name: "Testimonial", href: "#testimonial", type: "scroll" },
-  { name: "Blog", href: "/blogs", type: "route" },
   { name: "Contact", href: "#contact", type: "scroll" },
 ];
 
@@ -53,14 +53,42 @@ export default function NavMenu() {
   return (
     <>
       {/* Desktop menu */}
-      <nav className="hidden md:flex items-center gap-7 text-lg text-white">
-        <ul className="flex items-center  gap-7">
-          <li>
-            <NavLink className={({isActive}) => `${isActive && 'text-textAccent'}`} to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink className={({isActive}) => `${isActive && 'text-textAccent'}`} to='/blogs'>Blogs</NavLink>
-          </li>
+      <nav className="hidden lg:flex items-center gap-7 text-lg text-white">
+         <ul className="flex  gap-4 p-5 text-lg">
+          {navItem.map((item) =>
+            item.type === "scroll" ? (
+              <ScrollLink
+                key={item.name}
+                to={item.href.replace("#", "")}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                spy={true}
+                activeClass="text-textAccent"
+                className={`cursor-pointer transition-colors hover:text-textAccent ${
+                  activeSection === item.href.replace("#", "")
+                    ? "text-textAccent font-semibold"
+                    : ""
+                }`}
+                onClick={handleLinkClick}
+              >
+                {item.name}
+              </ScrollLink>
+            ) : (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors ${
+                    isActive ? "text-textAccent font-semibold" : ""
+                  }`
+                }
+                onClick={handleLinkClick}
+              >
+                {item.name}
+              </NavLink>
+            )
+          )}
         </ul>
         <button
           onClick={handleViewAndDownload}
@@ -71,15 +99,12 @@ export default function NavMenu() {
             <LuDownload />
           </span>
         </button>
-        <div className="max-lg:hidden">
-          <SocialMedia/>
-        </div>
       </nav>
 
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="md:hidden text-white text-[27px] focus:outline-none"
+        className="lg:hidden text-white text-[27px] focus:outline-none"
         aria-label="Open menu"
       >
         <HiMiniBars3BottomRight />
@@ -139,20 +164,9 @@ export default function NavMenu() {
             )
           )}
         </ul>
-        <div className="flex items-center justify-center mb-5 gap-4">
-          <a className="flex items-center gap-2" target="_blank" href="https://github.com/layekmia">
-            <FaGithub className="text-xl text-textPrimary" />
-          </a>
-          <a className="flex items-center gap-2"
-            target="_blank"
-            href="https://www.linkedin.com/in/layekmiah-webdeveloper"
-          >
-            <FaLinkedin  className="text-xl text-textPrimary"/>
-          </a>
-          <a className="flex items-center gap-2" target="_blank" href="https://www.facebook.com/layekmia.webdev/">
-            <FaFacebook  className="text-xl text-textPrimary"/>
-          </a>
-        </div>
+       <div className="flex items-center justify-center">
+        <SocialMedia/>
+       </div>
         <div className="px-4">
           <a
             href="/resume.pdf"

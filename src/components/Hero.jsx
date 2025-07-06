@@ -3,12 +3,12 @@ import profile from "../assets/profile.png";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-scroll";
 import { Typewriter } from 'react-simple-typewriter';
-import SocialSmallScreen from "./SocialSmallScreen";
+import SocialMedia from "./SocialMedia";
 
 export default function Hero() {
   return (
     <section className="lg:h-[750px] bg-surface flex items-center justify-center flex-col">
-      <div className="hide-1024-1320 max-sm:hidden">
+      <div className="hide-1024-1320 max-lg:hidden">
         <Sidebar />
       </div>
       <div className="max-w-[1220px] mx-auto px-5  py-12">
@@ -66,7 +66,7 @@ export default function Hero() {
           <div className="flex items-center gap-6 flex-col lg:flex-row  sm:px-10 md:px-14  lg:px-0">
             <div>
               <span className="text-textPrimary text-sm"> &lt;h1&gt;</span>
-              <h1 className="text-[32px] sm:text-[55px] text-white font-sans leading-[36px] sm:leading-[70px] ml-3">
+              <h1 className="text-[30px] sm:text-[55px] text-white font-sans leading-[36px] sm:leading-[70px] ml-3">
                 Hey, <br /> I'm <span className="">Layek</span>,{" "}
                 <br />{" "}
                 <span className="text-textAccent">
@@ -97,16 +97,16 @@ export default function Hero() {
                 <span className="font-medium text-secondaryText">
                   JavaScript
                 </span>
-                , and{" "}
+                , and
                 <span className="font-medium text-secondaryText">
                   Tailwind CSS
                 </span>
                 . I bring digital ideas to life through beautiful UI and smooth
                 UX.
               </p>
-              <span className="text-textPrimary text-sm"> &lt;p/&gt;</span>{" "}
+              <span className="text-textPrimary text-sm inline-block mb-2"> &lt;p/&gt;</span>
               <br />
-              <SocialSmallScreen/>
+              <SocialMedia/>
               <Link
                 to="contact"
                 smooth={true}

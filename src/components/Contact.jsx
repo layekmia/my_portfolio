@@ -29,7 +29,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f1115] text-white flex flex-col items-center justify-center px-4 sm:px-20 lg:px-5">
+    <div className=" py-10 md:py-20 bg-[#0f1115] text-white flex flex-col items-center justify-center px-4 sm:px-20 lg:px-5">
       <ScrollIndicator/>
       <button className="my-10 px-6 py-2 border border-teal-400 rounded-full text-teal-400 hover:bg-teal-500 hover:text-black transition">
         Send Me A Message
