@@ -3,9 +3,9 @@ import ContactForm from "../components/Contact";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
+import Projects from "../components/Projects";
 import SkillSection from "../components/Skills";
 import TestimonialSection from "../components/Testimonials";
-import WorkSection from "../components/WorkSection";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,7 +20,7 @@ export default function Home() {
             <About/>
         </section>
         <section id="skill"><SkillSection/></section>
-        <section id="work" className="bg-surfaceDark"><WorkSection/></section>
+        <section id="work" className="bg-surfaceDark"><Projects/></section>
         <section id="testimonial" className="bg-surface"><TestimonialSection/></section>
         <section id="contact" className="bg-surfaceDark"><ContactForm/></section>
       </main>

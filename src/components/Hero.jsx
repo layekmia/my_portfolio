@@ -103,7 +103,6 @@ export default function Hero() {
                 UX.
               </p>
               <span className="text-textPrimary text-sm inline-block mb-2">
-                {" "}
                 &lt;p/&gt;
               </span>
               <br />
