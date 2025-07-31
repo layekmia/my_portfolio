@@ -1,22 +1,31 @@
 import Sidebar from "./Sidebar";
 import profile from "../assets/profile.jpg";
-import { MdEmail } from "react-icons/md";
 import { Link } from "react-scroll";
 import { Typewriter } from "react-simple-typewriter";
 import SocialMedia from "./SocialMedia";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Hero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+    });
+  }, []);
+
   return (
-    <section className="lg:h-[750px] bg-surface flex items-center justify-center flex-col">
-      <div className="hide-1024-1320 max-lg:hidden">
-        <Sidebar />
-      </div>
-      <div className="max-w-[1220px] mx-auto px-5  py-12">
+    <section className="lg:h-[750px] bg-surface flex items-center  flex-col">
+      <div className="max-w-[1220px] mx-auto px-5  py-8">
         <h2 className="text-[80px] font-sans text-textPrimary max-md:hidden text-center mb-2">
           Developer
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] items-center gap-[60px] lg:gap-[50px] justify-between">
-          <div className=" w-[320px] mx-auto border-4 border-white rounded-[160px_0px_160px_0px] shadow-[-4px_-4px_2px_0px_rgb(18,_247,_214)] p-5 flex items-center flex-col justify-center">
+          <div
+            data-aos="fade-right"
+            className=" w-[320px] mx-auto border-4 border-white rounded-[160px_0px_160px_0px] shadow-[-4px_-4px_2px_0px_rgb(18,_247,_214)] p-5 flex items-center flex-col justify-center"
+          >
             <img
               src={profile}
               alt=""
@@ -117,7 +126,10 @@ export default function Hero() {
               </Link>
             </div>
             {/* Stats */}
-            <div className="py-12 px-7 bg-surfaceDark flex items-center flex-col justify-center gap-10 rounded-full">
+            <div
+              data-aos="fade-left"
+              className="py-12 px-7 bg-surfaceDark flex items-center flex-col justify-center gap-10 rounded-full"
+            >
               <p className="text-base text-white flex items-center text-center">
                 <span className="text-4xl text-textAccent font-medium mr-3">
                   1

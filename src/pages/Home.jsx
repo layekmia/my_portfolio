@@ -8,24 +8,47 @@ import SkillSection from "../components/Skills";
 import TestimonialSection from "../components/Testimonials";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Sidebar from "../components/Sidebar";
 
+export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+    });
+  }, []);
 
-export default function Home() { 
   return (
-    <>
+    <div className="bg-surface">
       <NavBar />
-      <main>
-        <section id="home"><Hero/></section>
-        <section id="about" className="bg-surfaceDark">
-            <About/>
+      <main className="overflow-hidden">
+        <section data-aos="fade-up" id="home">
+          <Hero />
         </section>
-        <section id="skill"><SkillSection/></section>
-        <section id="work" className="bg-surfaceDark"><Projects/></section>
-        <section id="testimonial" className="bg-surface"><TestimonialSection/></section>
-        <section id="contact" className="bg-surfaceDark"><ContactForm/></section>
+        <section id="about" className="bg-surfaceDark">
+          <About />
+        </section>
+        <section id="skill">
+          <SkillSection />
+        </section>
+        <section id="work" className="bg-surfaceDark">
+          <Projects />
+        </section>
+        <section id="testimonial" className="bg-surface">
+          <TestimonialSection />
+        </section>
+        <section id="contact" className="bg-surfaceDark">
+          <ContactForm />
+        </section>
       </main>
       <Footer />
-      <ToastContainer autoClose={1000} position='top-center'/>
-    </>
+      <ToastContainer autoClose={1000} position="top-center" />
+      <div  className="hide-1024-1320 max-lg:hidden">
+        <Sidebar />
+      </div>
+    </div>
   );
 }

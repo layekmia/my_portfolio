@@ -7,12 +7,6 @@ import {
 import { MdEmail } from "react-icons/md";
 
 export default function SocialMedia() {
-  const subject = "Service Inquiry";
-  const body =
-    "Hello Layek,\nI am interested in your services. Please provide more details.";
-  const mailtoLink = `mailto:layek.webdev@gmail.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
 
   return (
     <div className="flex items-center gap-4 my-2">
