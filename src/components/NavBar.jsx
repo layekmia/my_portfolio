@@ -21,7 +21,7 @@ export default function NavBar() {
         ${scrolled ? "bg-surfaceDark" : "bg-surface"}
       `}
     >
-      <nav className="flex items-center justify-between max-w-7xl mx-auto py-5 px-10 lg:px-5">
+      <nav className="flex items-center justify-between max-w-6xl mx-auto py-5 px-10 lg:px-5">
         <Logo />
         <div className="flex items-center gap-7">
           <NavMenu />

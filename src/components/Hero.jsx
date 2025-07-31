@@ -113,7 +113,7 @@ export default function Hero() {
                 duration={500}
                 className="flex items-center text-3xl text-textAccent gap-2 my-4 cursor-pointer"
               >
-                let’s talk <MdEmail className="text-gray-500" />
+                let’s talk
               </Link>
             </div>
             {/* Stats */}

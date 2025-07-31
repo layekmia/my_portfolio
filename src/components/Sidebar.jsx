@@ -7,7 +7,7 @@ import {
   FaLaptopCode,
 } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { MdOutlineReviews } from "react-icons/md";
 
 const navItems = [
