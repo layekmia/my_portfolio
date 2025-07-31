@@ -15,6 +15,7 @@ import postman from "./postman.svg";
 import supabase from "./supabase.png";
 import figma from "./figma.png";
 import vercel from "./vercel.png";
+import about from './image.jpg'
 
 export const assets = {
   html,
@@ -34,4 +35,5 @@ export const assets = {
   supabase,
   figma,
   vercel,
+  about
 };

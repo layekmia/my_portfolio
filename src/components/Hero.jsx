@@ -1,8 +1,8 @@
 import Sidebar from "./Sidebar";
-import profile from "../assets/profile.png";
+import profile from "../assets/profile.jpg";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-scroll";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import SocialMedia from "./SocialMedia";
 
 export default function Hero() {
@@ -12,13 +12,10 @@ export default function Hero() {
         <Sidebar />
       </div>
       <div className="max-w-[1220px] mx-auto px-5  py-12">
-        {/* Heading */}
         <h2 className="text-[80px] font-sans text-textPrimary max-md:hidden text-center mb-2">
           Developer
         </h2>
-        {/* main content */}
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] items-center gap-[60px] lg:gap-[50px] justify-between">
-          {/* card */}
           <div className=" w-[320px] mx-auto border-4 border-white rounded-[160px_0px_160px_0px] shadow-[-4px_-4px_2px_0px_rgb(18,_247,_214)] p-5 flex items-center flex-col justify-center">
             <img
               src={profile}
@@ -41,16 +38,16 @@ export default function Hero() {
             </div>
             <div className="mt-3 flex items-center gap-3">
               <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
-                HTML
-              </button>
-              <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
-                CSS
-              </button>
-              <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
                 JS
               </button>
               <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
-                REACT
+                React
+              </button>
+              <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
+                NEXT
+              </button>
+              <button className="bg-textPrimary rounded-full text-gray-700 text-sm py-1 px-2">
+                MERN
               </button>
             </div>
             <a
@@ -63,18 +60,19 @@ export default function Hero() {
             </a>
           </div>
           {/* details */}
-          <div className="flex items-center gap-6 flex-col lg:flex-row  sm:px-10 md:px-14  lg:px-0">
+          <div className="flex items-center mt-2 gap-6 flex-col lg:flex-row  sm:px-10 md:px-14  lg:px-0">
             <div>
               <span className="text-textPrimary text-sm"> &lt;h1&gt;</span>
               <h1 className="text-[30px] sm:text-[55px] text-white font-sans leading-[36px] sm:leading-[70px] ml-3">
-                Hey, <br /> I'm <span className="">Layek</span>,{" "}
-                <br />{" "}
+                <span className="sm:text-3xl"> Hi,</span> <br /> I'm{" "}
+                <span className="">Layek</span>,
+                <br />
                 <span className="text-textAccent">
                   <Typewriter
                     words={[
                       "Front-End Developer",
-                      "React Lover",
-                      "Problem Solver",
+                      "MERN Stack Builder",
+                      "Next.js Enthusiast",
                     ]}
                     loop={true}
                     cursor
@@ -104,9 +102,12 @@ export default function Hero() {
                 . I bring digital ideas to life through beautiful UI and smooth
                 UX.
               </p>
-              <span className="text-textPrimary text-sm inline-block mb-2"> &lt;p/&gt;</span>
+              <span className="text-textPrimary text-sm inline-block mb-2">
+                {" "}
+                &lt;p/&gt;
+              </span>
               <br />
-              <SocialMedia/>
+              <SocialMedia />
               <Link
                 to="contact"
                 smooth={true}
@@ -118,24 +119,24 @@ export default function Hero() {
             </div>
             {/* Stats */}
             <div className="py-12 px-7 bg-surfaceDark flex items-center flex-col justify-center gap-10 rounded-full">
-              <p className="text-base text-white flex items-center ">
-                <span className="text-4xl text-textAccent font-medium mr-3 ">
-                  4
-                </span>{" "}
+              <p className="text-base text-white flex items-center text-center">
+                <span className="text-4xl text-textAccent font-medium mr-3">
+                  1
+                </span>
                 Programming <br />
                 Language
               </p>
-              <p className="text-base text-white flex items-center ">
-                <span className="text-4xl text-textAccent font-medium mr-3 ">
+              <p className="text-base text-white flex items-center text-center">
+                <span className="text-4xl text-textAccent font-medium mr-3">
                   8
-                </span>{" "}
+                </span>
                 Development <br />
                 Tools
               </p>
-              <p className="text-base text-white flex items-center ">
-                <span className="text-4xl text-textAccent font-medium mr-3 ">
+              <p className="text-base text-white flex items-center text-center">
+                <span className="text-4xl text-textAccent font-medium mr-3">
                   2
-                </span>{" "}
+                </span>
                 Years of <br />
                 Experience
               </p>
