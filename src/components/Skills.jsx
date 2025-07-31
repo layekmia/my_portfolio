@@ -1,6 +1,7 @@
-import {useState} from 'react';
-import {assets} from '../assets/assets'
-import ScrollIndicator from './ScrollIndicator';
+import { useEffect, useState } from "react";
+import { assets } from "../assets/assets";
+import ScrollIndicator from "./ScrollIndicator";
+import AOS from "aos";
 
 const skills = [
   { name: "HTML", icon: assets.html, category: "web" },
@@ -27,6 +28,10 @@ export default function SkillsSection() {
 
   // Filter skills based on selected category
   const filteredSkills = skills.filter((skill) => skill.category === filter);
+
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+  }, []);
 
   return (
     <section className="bg-surface text-white pt-10 ">
@@ -66,6 +71,8 @@ export default function SkillsSection() {
             <div
               key={index}
               className="bg-[#111] p-4 rounded-md shadow-lg hover:scale-105 transition-transform cursor-pointer"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
               <img
                 src={skill.icon}

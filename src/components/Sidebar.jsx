@@ -15,7 +15,12 @@ const navItems = [
   { icon: <FaUser />, to: "about", type: "scroll", label: "About" },
   { icon: <FaCode />, to: "skill", type: "scroll", label: "Skill" },
   { icon: <FaLaptopCode />, to: "work", type: "scroll", label: "Work" },
-  {icon: <MdOutlineReviews />, to: 'testimonial', type: "scroll", label: "Testimonial"},
+  {
+    icon: <MdOutlineReviews />,
+    to: "testimonial",
+    type: "scroll",
+    label: "Testimonial",
+  },
   { icon: <FaEnvelope />, to: "contact", type: "scroll", label: "Contact" },
 ];
 

@@ -28,25 +28,25 @@ export default function Home() {
         <section data-aos="fade-up" id="home">
           <Hero />
         </section>
-        <section id="about" className="bg-surfaceDark">
+        <section data-aos="fade-up" id="about" className="bg-surfaceDark">
           <About />
         </section>
-        <section id="skill">
+        <section data-aos="fade-up" id="skill">
           <SkillSection />
         </section>
-        <section id="work" className="bg-surfaceDark">
+        <section data-aos="fade-up" id="work" className="bg-surfaceDark">
           <Projects />
         </section>
-        <section id="testimonial" className="bg-surface">
+        <section data-aos="fade-up" id="testimonial" className="bg-surface">
           <TestimonialSection />
         </section>
-        <section id="contact" className="bg-surfaceDark">
+        <section data-aos="fade-up" id="contact" className="bg-surfaceDark">
           <ContactForm />
         </section>
       </main>
       <Footer />
       <ToastContainer autoClose={1000} position="top-center" />
-      <div  className="hide-1024-1320 max-lg:hidden">
+      <div className="hide-1024-1320 max-lg:hidden">
         <Sidebar />
       </div>
     </div>

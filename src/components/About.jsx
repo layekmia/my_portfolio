@@ -1,15 +1,24 @@
-import coding from "../assets/about.jpeg";
+import { useEffect } from "react";
 import { assets } from "../assets/assets";
 import ScrollIndicator from "./ScrollIndicator";
+import AOS from "aos";
 
 export default function About() {
+ useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+  
+
   return (
     <div className="max-w-[1220px] mx-auto sm:px-20 lg:px-5 px-5 py-[80px]">
       <div className="mb-[80px]">
         <ScrollIndicator />
       </div>
       <div className="grid lg:grid-cols-[3fr_1.5fr] gap-[80px]  lg:gap-[30px]">
-        <div className="max-w-[700px] mx-auto">
+        <div data-aos='fade-right' className="max-w-[700px] mx-auto">
           <button className="border-4 border-textAccent rounded-[30px_0_30px_0] py-3 px-8 text-white text-3xl sm:text-5xl font-sans">
             About me
           </button>
@@ -42,7 +51,7 @@ export default function About() {
             <span className="text-textPrimary text-sm">&lt;/p&gt;</span>
           </div>
         </div>
-        <div className="max-lg:max-w-[450px] mx-auto md:h-[400px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+        <div data-aos='fade-left' className="max-lg:max-w-[450px] mx-auto md:h-[400px] hover:scale-105 transition-transform duration-300 cursor-pointer">
           <img
             className="w-full h-full object-contain md:object-cover rounded-2xl brightness-110"
             src={assets.about}
